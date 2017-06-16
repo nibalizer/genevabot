@@ -89,7 +89,11 @@ for page_number in range(ARGS.start_page, ARGS.end_page + 1):
 
 
 if ARGS.debug:
-    print(CORPUS)
+    for line in CORPUS.split("\n"):
+        try:
+            print(line)
+        except:
+            pass
     exit(1)
 print("Generating database...")
 BOT = MarkovChain(TARGET_FILE)
